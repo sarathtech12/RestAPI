@@ -1,0 +1,261 @@
+{
+  "info": {
+    "description": "Device_Tenant_Application",
+    "version": "1.1.0",
+    "title": "Swagger Config"
+  },
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/telemetry":{
+      "post": {
+        "tags": [
+          "Telemetry"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "description": "The request body for the file upload",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/json"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+
+          }
+        }
+      }
+    },
+    "/twin":{
+      "post": {
+        "tags": [
+          "Twin"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "description": "The request body for the file upload",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/json"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Twin"
+        ],
+        "summary": "",
+        "parameters": [
+
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+
+          }
+        }
+      }
+    },
+    "/uploadfile":{
+      "post": {
+        "tags": [
+          "File operations"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "file_id",
+            "type": "string",
+            "description": "",
+            "required": false
+          },
+          {
+            "in": "body",
+            "name": "Request body",
+            "description": "The request body for the file upload",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/json"
+            }
+          },
+          {
+            "name": "delete_file_after_upload",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "boolean",
+            "default": true,
+            "enum": [
+              true,
+              false
+            ]
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/uploadfile/upload_id":{
+      "get": {
+        "tags": [
+          "File operations"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "upload_id",
+            "type": "string",
+            "description": "",
+            "required": false
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/downloadfile":{
+      "post": {
+        "tags": [
+          "File operations"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "file_id",
+            "type": "string",
+            "description": "",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/downloadfile/{download_id}":{
+      "get": {
+        "tags": [
+          "File operations"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "download_id",
+            "type": "string",
+            "description": "",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+   "json": {
+     "type":"object",
+     "properties": {
+       "json_data":{
+         "type":"string",
+         "format":"json"
+       }
+     }
+   }
+  },
+  "swagger": "2.0"
+}

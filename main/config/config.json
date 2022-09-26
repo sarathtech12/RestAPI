@@ -1,0 +1,9 @@
+{
+
+  "fileupload" : "D:/flask/uploads",
+  "filedownload" : "./downloads",
+  "configurations" : "./configurations",
+  "certificates" : "./certificates",
+  "secrets" : "./secrets",
+  "usbdrive" : "./drive"
+}
